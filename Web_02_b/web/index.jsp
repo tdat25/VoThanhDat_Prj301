@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : Jan 8, 2026, 9:47:15 AM
+    Created on : Jan 8, 2026, 10:41:38 AM
     Author     : VO THANH DAT
 --%>
 
@@ -15,8 +15,13 @@
         <form action ="MainController" method = "get">
             a: <input type ="text" name ="txtA"/> <br/>
             b: <input type ="text" name ="txtB"/> <br/>  
-     
+            <select name = "txtOp">
+                <option></option>                
+                <option value="+">+</option>
+                <option value="-">-</option><!-- comment -->
+                <option value="*">*</option><!-- comment -->
+                <option value="/">/</option><!-- comment -->
+            </select>   
             <input type ="submit" value="Submit"/> <br/> 
-        </form>
     </body>
 </html>

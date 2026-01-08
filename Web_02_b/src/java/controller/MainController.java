@@ -37,11 +37,46 @@ public class MainController extends HttpServlet {
             out.println("<title>Servlet MainController</title>");            
             out.println("</head>");
             out.println("<body>");
+            
             String txtA = request.getParameter("txtA");
             String txtB = request.getParameter("txtB");
-            double a = Double.parseDouble(txtA);
-            double b = Double.parseDouble(txtB);            
-            out.println(a+ "+" + b+"= <b>"+ (a+b) +"</b>");  
+            String txtOp = request.getParameter("txtOp");
+            boolean checkError = false;
+            double a=0;
+            double b=0;
+            double result=0;
+            
+            
+            
+            try{
+            a = Double.parseDouble(txtA);
+            b = Double.parseDouble(txtB);            
+           switch (txtOp){
+               case "+":
+                result =a+b;
+                break;
+               case "-":
+                result =a-b;
+                break;
+               case "*":
+                result =a*b;
+                break;
+               case "/":
+                result =a/b;
+                break;
+               default:
+                   result =0;
+            }
+            }catch (Exception e){
+                   checkError= true;
+            }
+            
+            
+            if(!checkError)
+            out.println(a+ txtOp + b+"= <b>"+result +"</b>"); 
+            else
+            out.println("Women buuyi yang"); 
+
             out.println("</body>");
             out.println("</html>");
         }
