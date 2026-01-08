@@ -1,6 +1,6 @@
 <%-- 
     Document   : index
-    Created on : Jan 5, 2026, 11:07:16 AM
+    Created on : Jan 8, 2026, 9:47:15 AM
     Author     : VO THANH DAT
 --%>
 
@@ -12,7 +12,10 @@
         <title>JSP Page</title>
     </head>
     <body>
-        <h1>Hello World!</h1>
-        <br/> vo thanh dat
+        <form action ="MainController" method = "get">
+            a: <input type ="text" name ="txtA"/> <br/>
+            b: <input type ="text" name ="txtB"/> <br/>       
+            <input type ="submit" value="Submit"/> <br/> 
+        </form>
     </body>
 </html>

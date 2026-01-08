@@ -1,8 +1,3 @@
-<%-- 
-    Document   : index
-    Created on : Jan 5, 2026, 11:21:09 AM
-    Author     : VO THANH DAT
---%>
 
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
