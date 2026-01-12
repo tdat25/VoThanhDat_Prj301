@@ -48,8 +48,6 @@ public class MainController extends HttpServlet {
             }else{
                 url ="b.jsp";
             }
-            
-            // Chuyen trang
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
             out.println("</body>");
