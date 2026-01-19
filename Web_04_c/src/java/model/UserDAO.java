@@ -25,7 +25,7 @@ public class UserDAO {
         try {
             Connection conn = DbUtils.getConnection();
             String sql = "SELECT * FROM tblUsers "
-                    + " WHERE userID=?";
+                    + " WHERE userID='" + username + "'";
             System.out.println(sql);
             PreparedStatement pst = conn.prepareStatement(sql);
             pst.setString(1, username);
@@ -40,7 +40,7 @@ public class UserDAO {
                 boolean status = rs.getBoolean("status");
                 user = new UserDTO(userID, fullName, password, roleID, status);
             }
-            System.out.println(user);
+            
             return user;
         } catch (Exception e) {
             return null;
@@ -54,5 +54,4 @@ public class UserDAO {
         }
         return null;
     }     
-    
 }
