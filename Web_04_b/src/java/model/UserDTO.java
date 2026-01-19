@@ -12,6 +12,8 @@ public class UserDTO {
     private String username;
     private String password;
     private String fullname;
+    private String roleID;
+    private boolean status;
 
     public UserDTO() {
     }
@@ -48,6 +50,27 @@ public class UserDTO {
 
     public void setFullname(String fullname) {
         this.fullname = fullname;
+    }
+
+    public String getRoleID() {
+        return roleID;
+    }
+
+    public void setRoleID(String roleID) {
+        this.roleID = roleID;
+    }
+
+    public boolean isStatus() {
+        return status;
+    }
+
+    public void setStatus(boolean status) {
+        this.status = status;
+    }
+
+    @Override
+    public String toString() {
+        return "UserDTO{" + "username=" + username + ", password=" + password + ", fullname=" + fullname + ", roleID=" + roleID + ", status=" + status + '}';
     }
     
 }

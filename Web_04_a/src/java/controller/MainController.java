@@ -11,12 +11,12 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import model.UserDAO;
 import model.UserDTO;
+
 /**
  *
- * @author VO THANH DAT
+ * @author tungi
  */
 public class MainController extends HttpServlet {
 
@@ -44,15 +44,21 @@ public class MainController extends HttpServlet {
             String txtPassword = request.getParameter("txtPassword");
             
             String url = "";
-            
-            if(txtUsername.equalsIgnoreCase("admin")
-               && txtPassword.equals("admin")){
+            UserDAO udao = new UserDAO();
+            UserDTO user = udao.login(txtUsername, txtPassword);
+            System.out.println(user);
+            if(user!=null){
                 url ="a.jsp";
+                request.setAttribute("user", user);
             }else{
-                url ="b.jsp";
+                url ="login.jsp";
+                request.setAttribute("message", "Invalid username or password!");
             }
+            
+            // Chuyen trang
             RequestDispatcher rd = request.getRequestDispatcher(url);
             rd.forward(request, response);
+            
             out.println("</body>");
             out.println("</html>");
         }
