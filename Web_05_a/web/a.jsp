@@ -1,10 +1,9 @@
 <%-- 
     Document   : a
-    Created on : Jan 8, 2026, 11:43:20 AM
+    Created on : Jan 19, 2026, 9:53:15 AM
     Author     : VO THANH DAT
 --%>
 
-<%@page import="model.UserDTO"%>
 <%@page contentType="text/html" pageEncoding="UTF-8"%>
 <!DOCTYPE html>
 <html>
@@ -12,7 +11,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <title>JSP Page</title>
     </head>
-    
+    <body>
         <%
             UserDTO u = (UserDTO)session.getAttribute("user");
             if (u!=null){       
@@ -29,5 +28,5 @@
         %>
         
         
-    
+    </body>
 </html>
